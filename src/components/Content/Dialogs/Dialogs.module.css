@@ -1,0 +1,28 @@
+.dialogs_wrapper {
+    display: grid;
+    height: 100%;
+    grid-template-areas:
+        "m d"
+        "i d"
+    ;
+    grid-template-rows:1fr 100px;
+    grid-template-columns: 2fr 1fr;
+}
+
+.dialogs {
+    padding: 20px;
+    grid-area: d;
+    background-color: slategray;
+}
+
+.messages {
+    padding: 10px;
+    grid-area: m;
+    background-color: greenyellow;
+}
+
+.input {
+    padding: 10px;
+    grid-area: i;
+    background-color: darkgoldenrod;
+}
