@@ -3,22 +3,15 @@ import MessageItem from "./MessageItem/MessageItem";
 import DialogsItem from "./DialogsItem/DialogsItem";
 import InputMessageForm from "./InputMessageForm/InputMessageForm";
 
-let messages = [
-    {message: "Hi!", id: 1},
-    {message: "Who are you?", id: 2}
-]
 
 
-let dialogs = [
-    {name: "Alexey", id: 1},
-    {name: "Sveta", id: 2}
-]
 
-let dialogsElements = dialogs.map(d => <DialogsItem name={d.name} id={d.id} />)
-
-let messagesElements = messages.map(m => <MessageItem message={m.message} />)
 
 const Dialogs = (props) => {
+
+    let dialogsElements =  props.dialogsPage.dialogs.map(d => <DialogsItem name={d.name} id={d.id} />)
+    let messagesElements = props.dialogsPage.messages.map(m => <MessageItem message={m.message} />)
+
     return (
         <div className={classes.dialogs_wrapper}>
             <div className={classes.messages}>
@@ -28,7 +21,7 @@ const Dialogs = (props) => {
                 {dialogsElements}
             </div>
             <div className={classes.input}>
-                <InputMessageForm/>
+                <InputMessageForm newMessageText={props.dialogsPage.newMessageText} addMessge={props.addMessage} updateNewMessageText={props.updateNewMessageText}/>
             </div>
         </div>
     );

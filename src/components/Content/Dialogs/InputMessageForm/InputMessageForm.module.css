@@ -1,0 +1,10 @@
+.input textarea {
+    min-height: 50px;
+    min-width: 100%;
+}
+
+.input button {
+    background-color: black;
+    color: #fff;
+    font-size: 18px;
+}

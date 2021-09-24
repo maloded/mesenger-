@@ -8,7 +8,7 @@ const App = (props) => {
         <div className="App">
             <Header />
             <Sitebar />
-            <Content />
+            <Content dialogsPage={props.state.dialogsPage} addMessage={props.addMessage} updateNewMessageText={props.updateNewMessageText}/>
         </div>
     );
 }
