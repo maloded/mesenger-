@@ -1,17 +1,19 @@
 import classes from "./InputMessageForm.module.css";
 import React from "react";
+import {addMessageAC, updateNewMessageTextAC} from "../../../../Redux/dialogs_reducer";
 
 const InputMessageForm = (props) => {
 
     let newMessages = React.createRef();
 
 let addMessage = () => {
-    props.addMessge();
+    props.dispatch(addMessageAC());
 }
 
 let onPostChange = () => {
     let text = newMessages.current.value;
-    props.updateNewMessageText(text);
+    let action = updateNewMessageTextAC(text)
+    props.dispatch(action);
 }
 
     return (
